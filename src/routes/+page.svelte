@@ -1,16 +1,50 @@
-<script lang="ts">
-	import * as env from '$env/static/public';
-</script>
+<svelte:head>
+	<title>Welcome to fabricated!</title>
 
-<h1>the {env.PUBLIC_NAME} project</h1>
-<p>This website is still in early access so it's still missing a lot of features!</p>
-<p>You can check out the <a href="/blog">Blog</a> section thought!</p>
+	<meta name="darkreader-lock" />
+</svelte:head>
+
+<!--Actual content-->
+<div class="page-content text-box">
+	<a class="text title blur">fabricated.world</a>
+	<a class="text subtitle">- coming soon -</a>
+	<a class="text small">Check our ​<a href="blog">Blog</a></a>
+</div>
 
 <style>
-	h1 {
-		text-transform: capitalize;
+	body {
+		background-color: black;
+		overflow: hidden;
 	}
-	h1 + p {
-		font-weight: bold;
+	.page-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.text-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.text {
+    color: var(--text-1);
+		font-family: 'JetBrains Mono', monospace;
+		display: inline-flex;
+	}
+	.title {
+		font-size: 100px;
+	}
+	.subtitle {
+		margin-top: 15px;
+		font-size: 50px;
+	}
+	.small {
+		margin-top: 5px;
+		font-size: 25px;
+	}
+	.blur {
+		text-shadow: #0aa 0 0 50px;
 	}
 </style>
