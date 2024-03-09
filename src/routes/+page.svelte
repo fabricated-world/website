@@ -6,16 +6,12 @@
 
 <!--Actual content-->
 <div class="page-content text-box">
-	<a class="text title blur">fabricated.world</a>
-	<a class="text subtitle">- coming soon -</a>
-	<a class="text small">Check our ​<a href="blog">Blog</a></a>
+	<p class="text title blur">fabricated.world</p>
+	<p class="text subtitle">- coming soon -</p>
+	<p class="text small">Check our ​<a href="blog">Blog</a></p>
 </div>
 
 <style>
-	body {
-		background-color: black;
-		overflow: hidden;
-	}
 	.page-content {
 		position: absolute;
 		top: 50%;
@@ -29,7 +25,7 @@
 		justify-content: center;
 	}
 	.text {
-    color: var(--text-1);
+		color: var(--text-1);
 		font-family: 'JetBrains Mono', monospace;
 		display: inline-flex;
 	}
