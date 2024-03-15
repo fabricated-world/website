@@ -17,8 +17,15 @@
 <nav>
 	{#if innerWidth < 768}
 		<div
+			aria-label="Open Sidebar"
+			aria-pressed="false"
+			role="button"
+			tabindex="0"
 			class="toggle"
 			on:click={() => {
+				sidebar_opened = !sidebar_opened;
+			}}
+			on:keydown={() => {
 				sidebar_opened = !sidebar_opened;
 			}}
 		>
@@ -44,9 +51,16 @@
 {#if innerWidth < 768}
 	<div class="sidebar" class:opened={sidebar_opened}>
 		<div
+			aria-label="Close Sidebar"
+			aria-pressed="false"
+			role="button"
+			tabindex="0"
 			class="toggle"
 			style="margin-bottom: var(--size-3)"
 			on:click={() => {
+				sidebar_opened = !sidebar_opened;
+			}}
+			on:keydown={() => {
 				sidebar_opened = !sidebar_opened;
 			}}
 		>
@@ -65,6 +79,22 @@
 			{/each}
 		</ul>
 	</div>
+
+	<!-- Close the sidebar on external click-->
+	<div
+		class="sidebar-overlay"
+		class:opened={sidebar_opened}
+		aria-label="Close Sidebar"
+		aria-pressed="false"
+		role="button"
+		tabindex="0"
+		on:click={() => {
+			sidebar_opened = !sidebar_opened;
+		}}
+		on:keydown={() => {
+			sidebar_opened = !sidebar_opened;
+		}}
+	/>
 {/if}
 
 <style>
@@ -111,6 +141,7 @@
 		flex-direction: column;
 		gap: var(--size-4);
 		transition-duration: 0.2s;
+		z-index: 999;
 	}
 
 	.sidebar.opened {
@@ -127,5 +158,17 @@
 
 	.sidebar-icon {
 		color: var(--text-2);
+	}
+
+	.sidebar-overlay {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 998;
+		display: none;
+	}
+
+	.sidebar-overlay.opened {
+		display: block;
 	}
 </style>
