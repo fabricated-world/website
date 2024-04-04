@@ -5,9 +5,9 @@
 </script>
 
 <svelte:head>
-	<title>{data.meta.title} - {env.PUBLIC_NAME} Blog</title>
+	<title>{data.meta.title} - {env.PUBLIC_NAME}</title>
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{data.meta.title} - {env.PUBLIC_NAME} Blog" />
+	<meta property="og:title" content="{data.meta.title} - {env.PUBLIC_BLOG_NAME} Blog" />
 	<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"

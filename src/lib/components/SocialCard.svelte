@@ -8,16 +8,22 @@
 
 	export let style: string = '';
 	style = `--component-back-color: ${back_color}; --component-text-color: ${text_color};` + style;
+
+	import * as icons from 'lucide-svelte';
 </script>
 
-<a href={url} {style}>
-	<img src={logo} {alt} />
-	{text}
+<a href={url} target="_blank" {style}>
+	{#if logo.startsWith('icon:')}
+		<svelte:component this={icons[logo.replace('icon:', '')]} />
+	{:else}
+		<img src={logo} {alt} />
+	{/if}
+	{@html text}
 </a>
 
 <style>
 	a {
-		background-color: var(--component-back-color);
+		background: var(--component-back-color);
 		color: var(--component-text-color);
 		text-decoration: none;
 
@@ -38,5 +44,6 @@
 
 	img {
 		height: 100%;
+		border-radius: 0;
 	}
 </style>
