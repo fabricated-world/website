@@ -64,6 +64,8 @@ which gives us the machine code :
 
 which gives us the flag : 
 
-***FCSC{770ac04f9f113284eeee2da655eba34af09a12dba789c19020f5fd4eff1b1907}***
+```
+FCSC{770ac04f9f113284eeee2da655eba34af09a12dba789c19020f5fd4eff1b1907}
+```
 
 by cartoone

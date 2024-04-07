@@ -22,9 +22,9 @@ but we're missing the settings after some research on the IBM-029 drilling machi
 
 https://github.com/digitaltrails/punchedcardreader
 
-once all the cards have been decoded, we get what amounts to a computer program we do a quick historical search and discover that 70 years ago, when the machine in question was released, two programming languages dominated the market: **cobolte** and **fortran** we also notice that in the program we've just decoded there are comments and that they all start with a "!" based on this information, we can conclude that the language of the mysterious program is **fortran**. 
+once all the cards have been decoded, we get what amounts to a computer program we do a quick historical search and discover that 70 years ago, when the machine in question was released, two programming languages dominated the market: **cobolte** and **fortran** we also notice that in the program we've just decoded there are comments and that they all start with a "!" based on this information, we can conclude that the language of the mysterious program is **fortran**.
 
-the second part of the challenge, in addition to decoding, was to put the program back in order. it's based on **4** loops, equivalent to our for loop, and uses the variable i as an index. we can therefore classify the instructions into two categories: those that use i in their syntax and the others. in the lines that don't use i, you'll find a number of set-up lines used to declare variables or to include a set of data, so at the top you'll also see 3 instructions that will end the program - an equivalent of what would be a printe("") in python, an instruction that would be the equivalent of return 0 in C, and finally an instruction that tells the compiler that the program is finished. Thanks to these deductions, we've reconstructed a good part of the program, leaving the body of the program to be rebuilt. I assumed that the loops were not nested, so I put the instructions in the following order, using abbreviations in the following section:
+the second part of the challenge, in addition to decoding, was to put the program back in order. it's based on **4** loops, equivalent to our for loop, and uses the variable i as an index. we can therefore classify the instructions into two categories: those that use i in their syntax and the others. in the lines that don't use i, you'll find a number of set-up lines used to declare variables or to include a set of data, so at the top you'll also see 3 instructions that will end the program - an equivalent of what would be a print("") in python, an instruction that would be the equivalent of return 0 in C, and finally an instruction that tells the compiler that the program is finished. Thanks to these deductions, we've reconstructed a good part of the program, leaving the body of the program to be rebuilt. I assumed that the loops were not nested, so I put the instructions in the following order, using abbreviations in the following section:
 
 SSS = S1
 SS = SSS
@@ -33,42 +33,42 @@ SSSS = SSS
 
 we start by putting each of them in a loop, then we add the write instruction in the last one to display the result, then we execute the code which now looks like this:
 
-```fortran
-! --------------------------------------------------       
+```fortran-free-form
+! --------------------------------------------------
 PROGRAM HELLO
 USE HELLO_1
-IMPLICIT NONE                                           
-901 FORMAT (99A)                                                                 
+IMPLICIT NONE
+901 FORMAT (99A)
 
-INTEGER :: SSS(0:255)                                                          
-CHARACTER :: SSSS(0:255)  
-INTEGER :: I                    
-! - - - - - -    
+INTEGER :: SSS(0:255)
+CHARACTER :: SSSS(0:255)
+INTEGER :: I
+! - - - - - -
 
-DO I = 0,29,1                                                                  
-SSS(I:I) = S1(SS(I+1)+1:SS(I+1)+1) 
+DO I = 0,29,1
+SSS(I:I) = S1(SS(I+1)+1:SS(I+1)+1)
 END DO
 
-DO I = 0,29,1  
+DO I = 0,29,1
 SS(H(I+1)+1:H(I+1)+1) = SSS(I:I)
-END DO       
+END DO
 
-DO I = 0,29,1   
+DO I = 0,29,1
 SSS(I:I) = S2(SS(I+1)+1:SS(I+1)+1)
-END DO          
-! - - - - - -                                                                    
+END DO
+! - - - - - -
 
-DO I = 0,29,1   
-SSSS(I:I) = CHAR(SSS(I:I))   
-WRITE (*,901,ADVANCE='NO') SSSS(I:I)  
-END DO   
+DO I = 0,29,1
+SSSS(I:I) = CHAR(SSS(I:I))
+WRITE (*,901,ADVANCE='NO') SSSS(I:I)
+END DO
 
-WRITE (*,901,ADVANCE='YES') '' 
+WRITE (*,901,ADVANCE='YES') ''
 
-STOP 0  
-END PROGRAM  
-   
-! --------------------------------------------------  
+STOP 0
+END PROGRAM
+
+! --------------------------------------------------
 ```
 
 and it returns:

@@ -12,7 +12,7 @@ tags:
 
 for this challenge, from the first time I connected to the server and entered my first sentence, I understood that the objective was to make a timing attack because the calculation time is clearly displayed in the communication, so all I had to do was make a script to automate the process. 
 
-python
+```python
 from pwn import *
 
 HOST, PORT = "challenges.france-cybersecurity-challenge.fr", 2350
@@ -50,4 +50,6 @@ while True:
 
 my script doesn't handle the case where the sentence is corect so it only displays the sentence with the last character down before crashing but the last character is easily deducible moreover as the sentence doesn't change it suffices to restart a conaction and enter manuallment the flag which is :
 
-***FCSC{t1m1Ng_1s_K3y_8u7_74K1nG_u00r_t1mE_is_NEce554rY}***
+```
+FCSC{t1m1Ng_1s_K3y_8u7_74K1nG_u00r_t1mE_is_NEce554rY}
+```
