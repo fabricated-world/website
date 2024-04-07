@@ -56,16 +56,14 @@ MOV R0,R3
 STP
 ```
 
-which gives us the machine code : 
+which gives us the machine code :
 
 ```
 800600014dad80010000800200018006000180040000CF004a53002100324dad0645C701CFF900301400
 ```
 
-which gives us the flag : 
+which gives us the flag :
 
 ```
 FCSC{770ac04f9f113284eeee2da655eba34af09a12dba789c19020f5fd4eff1b1907}
 ```
-
-by cartoone
