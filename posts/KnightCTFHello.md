@@ -4,7 +4,7 @@ title: KnightCTF - Hello
 description: Our solution for the "Hello" challenge of the KnightCTF 2023
 author: Cartoone
 date: '01/22/2023'
-icon: https://knightctf.com/images/knightctf-logo.png
+icon: https://ctftime.org/media/cache/34/9f/349fe0a23f72ce7efeca1cf6e9eed649.png
 tags:
     - ctf
     - pwn
