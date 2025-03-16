@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "astro": "^5.5.2",
+    "font-proxima-nova": "^1.0.1",
     "lucide-astro": "^0.482.0",
-    "motion": "^12.5.0"
+    "motion": "^12.5.0",
+    "open-props": "^1.7.13"
   }
 }

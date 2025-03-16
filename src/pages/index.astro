@@ -1,11 +1,42 @@
 ---
-import Landing from '../components/Landing.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Logo from '../components/AnimatedLogo.astro'
 ---
 
 <Layout>
-	<Landing />
+  <div class="content">
+    <div class="logo">
+      <Logo fade />
+    </div>
+    <div class="text">
+      <h1>Fabricated World</h1>
+      <h2>{"<< Coming Soon >>"}</h2>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo {
+    width: 100%
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      flex-direction: row;
+    }
+
+    .logo {
+      max-width: 50vw;
+    }
+  }
+</style>
