@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.5.2"
+    "astro": "^5.5.2",
+    "lucide-astro": "^0.482.0",
+    "motion": "^12.5.0"
   }
 }

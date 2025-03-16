@@ -1,0 +1,32 @@
+---
+import Logo from '../assets/Logo.svg';
+
+interface Props {
+  animate: boolean;
+}
+const { animate = false } = Astro.props;
+---
+
+<Logo/>
+
+<script>
+  import { animate } from "motion/mini";
+  import { spring } from "motion";
+
+  // spinAnimation
+  animate("#path21", { transform: "rotate(360deg)" }, { repeat: Infinity, duration: 25, ease: "linear" })
+
+  // pulse ext
+  animate(
+    "#path2", 
+    { transform: ["scale(1)", "scale(1.1)", "scale(1)"] }, 
+    {repeat: Infinity, duration: 4.5, times: [.90, .95, 1], type: spring}
+  )
+
+  // pulse in
+  animate(
+    "#path3", 
+    { transform: ["scale(1)", "scale(1.15)", "scale(1)"] }, 
+    {repeat: Infinity, duration: 4.5, times: [.85, .95, 1], type: spring}
+  )
+</script>
