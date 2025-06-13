@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
 
 import Logo from '../components/AnimatedLogo.astro'
 ---
@@ -10,33 +11,66 @@ import Logo from '../components/AnimatedLogo.astro'
       <Logo fade />
     </div>
     <div class="text">
-      <h1>Fabricated World</h1>
-      <h2>{"<< Coming Soon >>"}</h2>
+      <h1 class="code">428</h1>
+      <h1>Victime de notre succès</h1>
+      <p>
+        Non, vous ne rêvez pas, ce site est <i>presque</i> vierge !
+        Fabricated World est une jeune autoentreprise. Créée il y a seulement quelques mois, nous avons déjà l'immense plaisir de traiter vos nombreuses commandes.
+        <br/>
+        <br/>
+        <b>Résultat</b> : nous n'avons pas encore trouvé le temps de nous occuper de notre propre site !
+        Si vous souhaitez que cela reste ainsi...
+      </p>
+      <CTA text="Contactez Nous" href="mailto:contact@fabricated.world" />
     </div>
   </div>
 </Layout>
 
 <style>
-  .content {
+  .content, .text {
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     text-align: center;
     width: 100%;
+    margin-bottom: 5rem;
   }
 
   .logo {
     width: 100%
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .content {
       flex-direction: row;
+      gap: -8rem;
+      margin-bottom: 0;
     }
 
     .logo {
       max-width: 50vw;
     }
+  }
+
+  h1 {
+    margin-top: .5rem;
+    margin-bottom: 0;
+  }
+
+  .code {
+    font-size: 10rem;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+    width: 75%;
+  }
+
+  i {
+    opacity: .7;
   }
 </style>

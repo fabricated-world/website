@@ -1,0 +1,27 @@
+---
+interface Props {
+    text?: string,
+    href: string
+}
+
+const { text = 'See More', href } = Astro.props;
+---
+
+<a {href}><b>{text}</b></a>
+
+<style>
+    a {
+        display: block;
+        width: fit-content;
+        white-space: nowrap;
+
+        padding: .5rem 1.25rem;
+        background-color: #fff;
+        border-radius: 7.5px;
+    }
+
+    a, a:visited, a:hover, a:active {
+        color: #000;
+        text-decoration: none;
+    }
+</style>
