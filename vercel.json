@@ -1,0 +1,27 @@
+{
+  "rewrites": [
+    {
+      "source": "/.well-known/matrix/server",
+      "destination": "https://matrix.fabricated.world/.well-known/matrix/server"
+    },
+    {
+      "source": "/.well-known/matrix/client",
+      "destination": "https://matrix.fabricated.world/.well-known/matrix/client"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/.well-known/matrix/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ]
+}
