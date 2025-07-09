@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/.well-known/matrix/server",
-      "destination": "https://matrix.fabricated.world/.well-known/matrix/server"
+      "destination": "https://cdn.kalitsune.net/libs/matrix/server_wellknown.json"
     },
     {
       "source": "/.well-known/matrix/client",
